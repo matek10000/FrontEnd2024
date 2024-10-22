@@ -4,6 +4,7 @@ import RootLayout from './layouts/RootLayout';
 import Home from './pages/Home'; 
 import Lab1 from './pages/Lab1';
 import Lab2 from './pages/Lab2';
+import Lab3 from './pages/Lab3';
 import NotFound from './pages/NotFound';
 import { data } from './module-data.js'; 
 import PersonProfile from './components/PersonProfile'; 
@@ -20,7 +21,8 @@ const menuItems = [
       </div>
     ) 
   },
-  { id: 3, label: "Laboratorium 2", url: "/lab2/:id", urlPattern: "/lab2/:id", element: <Lab2 /> }
+  { id: 3, label: "Laboratorium 2", url: "/lab2/:id", urlPattern: "/lab2/:id", element: <Lab2 /> },
+  { id: 4, label: "Laboratorium 3", url: "/lab3", urlPattern: "/lab3", element: <Lab3 /> }
 ];
 
 function App() {

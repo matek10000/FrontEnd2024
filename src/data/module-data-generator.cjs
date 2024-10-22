@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-const count = Number(process.argv[2]) || 10; // domyślnie 10 obiektów
-let names = []; // tablica z obiektami 
+const count = Number(process.argv[2]) || 10; // default to 10 objects
+let names = []; // array of objects
 
 fs.readFile('./names.txt', 'utf8', (err, data) => {
     if (err) {
@@ -16,8 +16,9 @@ fs.readFile('./names.txt', 'utf8', (err, data) => {
         const name = names[randomIndex];
         const birth = new Date(2000 + Math.floor(Math.random() * 20), Math.floor(Math.random() * 12), Math.floor(Math.random() * 28 + 1)).toISOString().split('T')[0];
         const eyes = ['blue', 'brown', 'green'][Math.floor(Math.random() * 3)];
+        const rating = Math.floor(Math.random() * 10) + 1;
         
-        content += `  { id: ${i + 1}, name: "${name}", birth: "${birth}", eyes: "${eyes}" },\n`;
+        content += `  { id: ${i + 1}, name: "${name}", birth: "${birth}", eyes: "${eyes}", rating: ${rating} },\n`;
     }
     content += "];";
 
