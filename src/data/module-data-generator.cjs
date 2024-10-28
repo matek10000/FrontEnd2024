@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-const count = Number(process.argv[2]) || 10; // default to 10 objects
-let names = []; // array of objects
+const count = Number(process.argv[2]) || 10;
+let names = [];
 
 fs.readFile('./names.txt', 'utf8', (err, data) => {
     if (err) {

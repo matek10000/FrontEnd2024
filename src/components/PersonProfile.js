@@ -1,44 +1,49 @@
 import React, { useState } from 'react';
-import RatingBar from './RatingBar'; // Upewnij się, że ścieżka jest poprawna
+import RatingBar from './RatingBar';
 
 const PersonProfile = ({ person, dispatch }) => {
     const [showModal, setShowModal] = useState(false);
     const [newName, setNewName] = useState(person.name);
     const [newEyes, setNewEyes] = useState(person.eyes);
-    const [newBirth, setNewBirth] = useState(person.birth); // Dodaj datę urodzenia do stanu
+    const [newBirth, setNewBirth] = useState(person.birth); 
 
+
+    // EDIT
     const handleEdit = () => {
         setNewName(person.name);
         setNewEyes(person.eyes);
-        setNewBirth(person.birth); // Ustaw datę urodzenia
+        setNewBirth(person.birth);
         setShowModal(true);
     };
 
     const handleSave = () => {
         dispatch({
-            type: "edit", // Typ akcji dla edycji
+            type: "edit",
             payload: {
                 id: person.id,
                 name: newName,
                 eyes: newEyes,
-                birth: newBirth // Przekaż datę urodzenia
+                birth: newBirth
             }
         });
         setShowModal(false);
     };
 
+
+    // DELETE
     const handleDelete = () => {
         dispatch({
-            type: "delete", // Typ akcji dla usunięcia
+            type: "delete",
             payload: { id: person.id }
         });
     };
 
+    // RATING
     const handleRate = () => {
         const newRating = person.rating === 10 ? 0 : person.rating + 1;
         dispatch({
             type: "rate",
-            payload: { id: person.id, rating: newRating } // Przesyłaj nowy rating
+            payload: { id: person.id, rating: newRating } 
         });
     };
 
@@ -49,7 +54,7 @@ const PersonProfile = ({ person, dispatch }) => {
                 <p className="card-text">Id: {person.id}</p>
                 <p className="card-text">Data urodzenia: {person.birth}</p>
                 <p className="card-text">Kolor oczu: {person.eyes}</p>
-                <p className="card-text">Rating: {person.rating}</p> {/* Użyj ratingu z person */}
+                <p className="card-text">Rating: {person.rating}</p> {}
                 <RatingBar rate={person.rating} />
 
                 <button className="btn btn-primary me-2" onClick={handleEdit}>Edit</button>
@@ -62,14 +67,14 @@ const PersonProfile = ({ person, dispatch }) => {
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title">Edit Person</h5>
+                                <h5 className="modal-title">Edycja osoby</h5>
                                 <button type="button" className="close" onClick={() => setShowModal(false)}>
                                     <span>&times;</span>
                                 </button>
                             </div>
                             <div className="modal-body">
                                 <div className="mb-3">
-                                    <label className="form-label">Name</label>
+                                    <label className="form-label">Nazwa</label>
                                     <input
                                         type="text"
                                         className="form-control"
@@ -79,7 +84,7 @@ const PersonProfile = ({ person, dispatch }) => {
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label className="form-label">Eye Color</label>
+                                    <label className="form-label">Kolor oczu</label>
                                     <input
                                         type="text"
                                         className="form-control"
@@ -89,7 +94,7 @@ const PersonProfile = ({ person, dispatch }) => {
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label className="form-label">Date of Birth</label>
+                                    <label className="form-label">Data urodzenia</label>
                                     <input
                                         type="date"
                                         className="form-control"
@@ -100,8 +105,8 @@ const PersonProfile = ({ person, dispatch }) => {
                                 </div>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Close</button>
-                                <button type="button" className="btn btn-primary" onClick={handleSave}>Save changes</button>
+                                <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Zamknij</button>
+                                <button type="button" className="btn btn-primary" onClick={handleSave}>Zaktualizuj</button>
                             </div>
                         </div>
                     </div>

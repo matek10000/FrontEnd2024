@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { data } from '../module-data.js'; // Upewnij się, że importujesz dane
+import { data } from '../module-data.js';
 
 function Lab2() {
     const { id } = useParams();
