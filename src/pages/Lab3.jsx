@@ -1,23 +1,36 @@
-import React from 'react';
-import FlexContainer from '../components/FlexContainer';
-import { Card } from 'react-bootstrap';
+import React, { useReducer } from 'react';
 import { data } from '../module-data';
-
-const Item = ({ name, id }) => (
-  <Card style={{ width: '18rem' }} className="border mb-3 p-3">
-    <Card.Body>
-      <Card.Title>{name}</Card.Title>
-    </Card.Body>
-  </Card>
-);
+import FlexContainer from '../components/FlexContainer';
+import PersonProfile from '../components/PersonProfile';
+import AppReducer from '../data/AppReducer';
 
 const Lab3 = () => {
-  return (
-    <div>
-      <h1>Laboratorium 3</h1>
-      <FlexContainer element={Item} data={data} />
-    </div>
-  );
+    const [state, dispatch] = useReducer(AppReducer, data);
+
+    const handleEdit = (id) => {
+        // logika edycji
+        console.log("Edit:", id);
+    };
+
+    const handleDelete = (id) => {
+        dispatch({ type: 'delete', payload: { id } });
+    };
+
+    return (
+        <div>
+            <h1>Laboratorium 3</h1>
+            <FlexContainer
+                element={({ ...person }) => (
+                    <PersonProfile
+                        person={person}
+                        onEdit={handleEdit}
+                        onDelete={handleDelete}
+                    />
+                )}
+                data={state}
+            />
+        </div>
+    );
 };
 
 export default Lab3;
