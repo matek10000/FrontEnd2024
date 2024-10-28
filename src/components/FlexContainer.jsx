@@ -1,18 +1,16 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
-const FlexContainer = ({ element: Element, data }) => {
-  return (
-    <Container>
-      <Row>
-        {data.map((item, index) => (
-          <Col key={index} xs={12} sm={6} md={4} lg={3}>
-            <Element {...item} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
-  );
-};
+function FlexContainer({ element: Element, data, dispatch }) {
+    return (
+        <Row className="d-flex flex-wrap">
+            {data.map(item => (
+                <Col key={item.id} md={4} className="mb-3"> {/* Użyj kolumny Bootstrap dla responsywności */}
+                    <Element person={item} dispatch={dispatch} /> {/* Przekaż dispatch do elementu */}
+                </Col>
+            ))}
+        </Row>
+    );
+}
 
 export default FlexContainer;

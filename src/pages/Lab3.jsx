@@ -1,35 +1,24 @@
 import React, { useReducer } from 'react';
-import { data } from '../module-data';
 import FlexContainer from '../components/FlexContainer';
-import PersonProfile from '../components/PersonProfile';
-import AppReducer from '../data/AppReducer';
+import { data } from '../module-data'; // module data
+import AppReducer from '../data/AppReducer'; // reduktor
+import PersonProfile from '../components/PersonProfile'; // PersonProfile
+import { Container } from 'react-bootstrap'; // Użyj Container z Bootstrap
+
+const Item = ({ person, dispatch }) => (
+    <div className="border p-3">
+        <PersonProfile person={person} dispatch={dispatch} /> {/* Użyj PersonProfile */}
+    </div>
+);
 
 const Lab3 = () => {
-    const [state, dispatch] = useReducer(AppReducer, data);
-
-    const handleEdit = (id) => {
-        // logika edycji
-        console.log("Edit:", id);
-    };
-
-    const handleDelete = (id) => {
-        dispatch({ type: 'delete', payload: { id } });
-    };
+    const [items, dispatch] = useReducer(AppReducer, data); // Zainicjalizuj useReducer
 
     return (
-        <div>
+        <Container className="mt-4">
             <h1>Laboratorium 3</h1>
-            <FlexContainer
-                element={({ ...person }) => (
-                    <PersonProfile
-                        person={person}
-                        onEdit={handleEdit}
-                        onDelete={handleDelete}
-                    />
-                )}
-                data={state}
-            />
-        </div>
+            <FlexContainer element={Item} data={items} dispatch={dispatch} /> {/* Przekaż element i dispatch */}
+        </Container>
     );
 };
 

@@ -1,25 +1,25 @@
-export default function AppReducer(state, action) {
-    switch(action.type) {
-        case "edit": {
-            const { id, updates } = action.payload;
-            return state.map(item =>
-                item.id === id ? { ...item, ...updates } : item
-            );
-        }
+const AppReducer = (state, action) => {
+    switch (action.type) {
+        case "delete":
+            return state.filter(person => person.id !== action.payload.id);
 
-        case "rate": {
-            const { id, rating } = action.payload;
-            return state.map(item =>
-                item.id === id ? { ...item, rating: rating } : item
+        case "edit":
+            return state.map(person => 
+                person.id === action.payload.id 
+                    ? { ...person, ...action.payload } // Aktualizuj obiekt
+                    : person
             );
-        }
 
-        case "delete": {
-            const { id } = action.payload;
-            return state.filter(item => item.id !== id);
-        }
+        case "rate":
+            return state.map(person => 
+                person.id === action.payload.id 
+                    ? { ...person, rating: action.payload.rating } // Zaktualizuj rating
+                    : person
+            );
 
         default:
             return state;
     }
-}
+};
+
+export default AppReducer;
