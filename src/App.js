@@ -1,11 +1,15 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom'; 
-import RootLayout from './layouts/RootLayout'; 
-import Home from './pages/Home'; 
+// src/App.jsx
+import React, { useReducer } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import RootLayout from './layouts/RootLayout';
+import Home from './pages/Home';
 import Lab1 from './pages/Lab1';
 import Lab2 from './pages/Lab2';
 import Lab3 from './pages/Lab3';
 import NotFound from './pages/NotFound';
+import AppContext from './data/AppContext';
+import AppReducer from './data/AppReducer';
+import { data } from './module-data';
 
 const menuItems = [
   { id: 1, label: "Home", url: "/", urlPattern: "/", element: <Home /> },
@@ -15,15 +19,19 @@ const menuItems = [
 ];
 
 function App() {
+  const [state, appDispatch] = useReducer(AppReducer, data);
+
   return (
-    <RootLayout items={menuItems}>
-      <Routes>
-        {menuItems.map(item => (
-          <Route key={item.id} path={item.urlPattern} element={item.element} />
-        ))}
-        <Route path="/*" element={<NotFound />} />
-      </Routes>
-    </RootLayout>
+    <AppContext.Provider value={{ items: state, dispatch: appDispatch }}>
+      <RootLayout items={menuItems}>
+        <Routes>
+          {menuItems.map(item => (
+            <Route key={item.id} path={item.urlPattern} element={item.element} />
+          ))}
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
+      </RootLayout>
+    </AppContext.Provider>
   );
 }
 

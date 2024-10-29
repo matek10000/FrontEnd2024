@@ -1,25 +1,19 @@
-import React, { useReducer } from 'react';
+import React from 'react';
+import { Card } from 'react-bootstrap';
 import FlexContainer from '../components/FlexContainer';
-import { data } from '../module-data'; // module data
-import AppReducer from '../data/AppReducer'; // reduktor
-import PersonProfile from '../components/PersonProfile'; // PersonProfile
-import { Container } from 'react-bootstrap';
+import PersonProfile from '../components/PersonProfile';
 
-const Item = ({ person, dispatch }) => (
-    <div className="border p-3">
-        <PersonProfile person={person} dispatch={dispatch} /> {}
-    </div>
+const Item = ({ person }) => (
+  <Card style={{ width: '18rem' }} className="border mb-3 p-3">
+    <PersonProfile person={person} />
+  </Card>
 );
 
-const Lab3 = () => {
-    const [items, dispatch] = useReducer(AppReducer, data); // useReducer
-
-    return (
-        <Container className="mt-4">
-            <h1>Laboratorium 3</h1>
-            <FlexContainer element={Item} data={items} dispatch={dispatch} /> {}
-        </Container>
-    );
-};
+const Lab3 = () => (
+  <div>
+    <h1>Laboratorium 3</h1>
+    <FlexContainer element={Item} /> {}
+  </div>
+);
 
 export default Lab3;
