@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
-import AppContext from '../data/AppContext';
 import RatingBar from './RatingBar';
+import { AppContext } from '../data/AppContext';
+
 
 const PersonProfile = ({ person }) => {
   const { dispatch } = useContext(AppContext);
