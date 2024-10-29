@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Button, Container, Form, FormControl } from "react-bootstrap";
 import { AppContext } from "../data/AppContext";
-import { useNavigate } from "react-router-dom"; // Importuj useNavigate
+import { useNavigate } from "react-router-dom";
 
 const Lab4Add = () => {
     const { dispatch } = useContext(AppContext);
@@ -14,7 +14,7 @@ const Lab4Add = () => {
         rating: 0,
     });
 
-    const navigate = useNavigate(); // Użyj useNavigate
+    const navigate = useNavigate(); // uzycie zeby mozna bylo zobaczyc efekty
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -54,7 +54,7 @@ const Lab4Add = () => {
         });
 
         // Przekierowanie do Lab3
-        navigate("/lab3"); // Przekieruj do Lab3
+        navigate("/lab3");
     };
 
     return (
