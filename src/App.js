@@ -8,7 +8,7 @@ import Lab3 from './pages/Lab3';
 import Lab4Add from './pages/Lab4Add';
 import Lab4Edit from './pages/Lab4Edit';
 import NotFound from './pages/NotFound';
-import AppProvider from './data/AppContext'; // Import AppProvider
+import AppProvider from './data/AppContext';
 
 const menuItems = [
     { id: 1, label: "Home", url: "/", urlPattern: "/", element: <Home /> },
@@ -21,7 +21,7 @@ const menuItems = [
 
 function App() {
     return (
-        <AppProvider> {/* Wrap your application with AppProvider */}
+        <AppProvider> {}
             <RootLayout items={menuItems}>
                 <Routes>
                     {menuItems.map(item => (

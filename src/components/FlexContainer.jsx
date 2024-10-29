@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { AppContext } from '../data/AppContext'; // Import context correctly
+import { AppContext } from '../data/AppContext';
 
 function FlexContainer({ element: Element }) {
-  const { items } = useContext(AppContext); // Get items from context
+  const { items } = useContext(AppContext);
 
   return (
     <div className="d-flex flex-wrap">

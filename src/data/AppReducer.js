@@ -6,19 +6,19 @@ const AppReducer = (state, action) => {
         case "edit":
             return state.map(person => 
                 person.id === action.payload.id 
-                    ? { ...person, ...action.payload } // Update the object
+                    ? { ...person, ...action.payload }
                     : person
             );
 
         case "rate":
             return state.map(person => 
                 person.id === action.payload.id 
-                    ? { ...person, rating: action.payload.rating } // Update rating
+                    ? { ...person, rating: action.payload.rating } 
                     : person
             );
 
-        case "ADD": // New case for adding a person
-            return [...state, action.payload]; // Add the new person to the state
+        case "ADD": // DODAWANIE OSOBY
+            return [...state, action.payload];
 
         default:
             return state;
