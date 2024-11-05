@@ -9,6 +9,7 @@ import Lab4Add from './pages/Lab4Add';
 import Lab4Edit from './pages/Lab4Edit';
 import NotFound from './pages/NotFound';
 import AppProvider from './data/AppContext';
+import Lab5 from './pages/Lab5';
 
 const menuItems = [
     { id: 1, label: "Home", url: "/", urlPattern: "/", element: <Home /> },
@@ -17,6 +18,7 @@ const menuItems = [
     { id: 4, label: "Laboratorium 3", url: "/lab3", urlPattern: "/lab3", element: <Lab3 /> },
     { id: 5, label: "Dodaj Obiekt", url: "/lab4/add", urlPattern: "/lab4/add", element: <Lab4Add /> },
     { id: 6, label: "Edytuj Obiekt", url: "/lab4/edit/:id", urlPattern: "/lab4/edit/:id", element: <Lab4Edit /> },
+    { id: 7, label: "Laboratorium 5", url: "/lab5", urlPattern: "/lab5", element: <Lab5 /> },
 ];
 
 function App() {
