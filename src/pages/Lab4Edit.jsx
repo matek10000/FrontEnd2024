@@ -66,6 +66,7 @@ const Lab4Edit = () => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
+                <h1>Edycja osoby</h1>
                 <label>ID:</label>
                 <input
                     type="number"
