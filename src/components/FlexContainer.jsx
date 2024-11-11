@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../data/AppContext';
+import './FlexContainer.css';
 
 function FlexContainer({ element: Element }) {
   const { items } = useContext(AppContext);

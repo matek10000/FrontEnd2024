@@ -1,0 +1,74 @@
+/* Styl dla rozwijanych przycisków */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .dropdown-button:hover {
+    background-color: #45a049;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content button {
+    background-color: #f9f9f9;
+    color: black;
+    padding: 10px 12px;
+    text-align: left;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .dropdown-content button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Dodajemy dodatkowy styl dla tabeli */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  

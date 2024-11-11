@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import RatingBar from './RatingBar';
 import { AppContext } from '../data/AppContext';
 import { useNavigate } from 'react-router-dom';
+import './PersonProfile.css';
 
 const PersonProfile = ({ person }) => {
   const { dispatch } = useContext(AppContext);

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './TableHeader.css';  // Importujemy plik CSS
 
 const TableHeader = ({ onSortUser, onSortTitle, onSortComments }) => {
   const [sortOrderUser, setSortOrderUser] = useState('default');
@@ -25,21 +26,42 @@ const TableHeader = ({ onSortUser, onSortTitle, onSortComments }) => {
       <tr>
         <th>
           Użytkownik
-          <button onClick={() => handleSortUser('asc')}> ⬆</button>
-          <button onClick={() => handleSortUser('desc')}> ⬇</button>
-          <button onClick={() => handleSortUser('default')} >🔄</button>
+          <div className="dropdown">
+            <button className="dropdown-button">
+              {sortOrderUser === 'default' ? 'Sortowanie' : sortOrderUser === 'asc' ? 'Rosnąco' : 'Malejąco'}
+            </button>
+            <div className="dropdown-content">
+              <button onClick={() => handleSortUser('asc')}>Rosnąco</button>
+              <button onClick={() => handleSortUser('desc')}>Malejąco</button>
+              <button onClick={() => handleSortUser('default')}>Resetuj</button>
+            </div>
+          </div>
         </th>
         <th>
           Tytuł Postu
-          <button onClick={() => handleSortTitle('asc')}> ⬆</button>
-          <button onClick={() => handleSortTitle('desc')}> ⬇</button>
-          <button onClick={() => handleSortTitle('default')} >🔄</button>
+          <div className="dropdown">
+            <button className="dropdown-button">
+              {sortOrderTitle === 'default' ? 'Sortowanie' : sortOrderTitle === 'asc' ? 'Rosnąco' : 'Malejąco'}
+            </button>
+            <div className="dropdown-content">
+              <button onClick={() => handleSortTitle('asc')}>Rosnąco</button>
+              <button onClick={() => handleSortTitle('desc')}>Malejąco</button>
+              <button onClick={() => handleSortTitle('default')}>Resetuj</button>
+            </div>
+          </div>
         </th>
         <th>
           Liczba Komentarzy
-          <button onClick={() => handleSortComments('asc')}> ⬆</button>
-          <button onClick={() => handleSortComments('desc')}> ⬇</button>
-          <button onClick={() => handleSortComments('default')} >🔄</button>
+          <div className="dropdown">
+            <button className="dropdown-button">
+              {sortOrderComments === 'default' ? 'Sortowanie' : sortOrderComments === 'asc' ? 'Rosnąco' : 'Malejąco'}
+            </button>
+            <div className="dropdown-content">
+              <button onClick={() => handleSortComments('asc')}>Rosnąco</button>
+              <button onClick={() => handleSortComments('desc')}>Malejąco</button>
+              <button onClick={() => handleSortComments('default')}>Resetuj</button>
+            </div>
+          </div>
         </th>
       </tr>
     </thead>

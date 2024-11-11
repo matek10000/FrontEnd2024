@@ -1,0 +1,71 @@
+/* Globalne style tabeli */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #d5ebcf;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Styl dla linków w tabeli */
+  a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Styl dla rozwijanych postów */
+  div[style*='cursor: pointer'] {
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  div[style*='cursor: pointer']:hover {
+    color: #007BFF;
+  }
+  
+  div[style*='padding-top'] {
+    padding: 8px;
+    font-style: italic;
+    color: #555;
+  }
+  
+  /* Nagłówki tabeli */
+  th {
+    text-align: left;
+    font-size: 16px;
+    padding: 15px;
+  }
+  
+  /* Przyciski sortowania */
+  button.sort-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  button.sort-btn:hover {
+    background-color: #45a049;
+  }
+  

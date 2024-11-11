@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import FlexContainer from '../components/FlexContainer';
 import PersonProfile from '../components/PersonProfile';
+import './Lab3.css';
 
 const Item = ({ person }) => (
   <Card style={{ width: '18rem' }} className="border mb-3 p-3">

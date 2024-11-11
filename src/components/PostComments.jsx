@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
+import './PostComments.css';
 
 const PostComments = () => {
   const { id } = useParams();
@@ -12,7 +13,7 @@ const PostComments = () => {
   }
 
   return (
-    <div>
+    <div className="post-comments-container"> {}
       <h2>Post: {post.title}</h2>
       <p>{post.body}</p>
       <h3>Komentarze:</h3>

@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { AppContext } from "../data/AppContext";
 import { useLocation, useNavigate } from "react-router-dom";
+import './Lab4Edit.css';
 
 const Lab4Edit = () => {
     const { dispatch, items } = useContext(AppContext);

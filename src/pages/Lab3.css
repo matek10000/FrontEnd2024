@@ -1,0 +1,38 @@
+.lab3-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f5f5f5;
+  }
+  
+  .card-item {
+    width: 18rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .card-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-item .card-body {
+    padding: 1rem;
+  }
+  
+  .card-item h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .card-item p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0;
+  }
+  
