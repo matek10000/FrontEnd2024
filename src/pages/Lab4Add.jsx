@@ -14,13 +14,13 @@ const Lab4Add = () => {
         rating: 0,
     });
 
-    const navigate = useNavigate(); // uzycie zeby mozna bylo zobaczyc efekty
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
             ...prevData,
-            [name]: value,
+            [name]: name === 'rating' ? Number(value) : value, // Konwersja ratingu na liczbę
         }));
     };
 

@@ -10,12 +10,12 @@ const AppReducer = (state, action) => {
                     : person
             );
 
-        case "rate":
-            return state.map(person => 
-                person.id === action.payload.id 
-                    ? { ...person, rating: action.payload.rating } 
-                    : person
-            );
+            case "rate":
+                return state.map(person =>
+                    person.id === action.payload.id
+                        ? { ...person, rating: action.payload.rating } // rating już powinien być liczbą
+                        : person
+                );
 
         case "ADD": // DODAWANIE OSOBY
             return [...state, action.payload];
