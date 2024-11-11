@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Projekt FrontEnd 2024
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Jest to projekt stworzony na potrzeby laboratoriów z przedmiotu Front-End w 2024 roku. Projekt zawiera różne komponenty React i implementacje funkcji, takich jak formularze, zarządzanie stanem aplikacji, dynamiczne wyświetlanie danych oraz interakcje z zewnętrznymi API.
 
-## Available Scripts
+## Zawartość projektu
 
-In the project directory, you can run:
+Projekt składa się z kilku laboratoriów, z których każde obejmuje różne zadania, m.in.:
 
-### `npm start`
+- **Laboratorium 1** - Podstawy React i struktura aplikacji.
+- **Laboratorium 2** - Wyszukiwanie użytkowników oraz informacji o nim po id w linku.
+- **Laboratorium 3** - Tworzenie dynamicznych widoków przy użyciu komponentów.
+- **Laboratorium 4** - Obsługa formularzy z walidacją oraz edycja danych.
+- **Laboratorium 5** - Zastosowanie zewnętrznych API i interakcji między komponentami.
+- **Laboratorium 5 (rozszerzenie)** - Wykorzystanie sortowania i paginacji w tabelach danych.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Wymagania
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js w wersji 16 lub wyższej.
+- npm (Node Package Manager)
 
-### `npm test`
+## Instalacja
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Aby uruchomić projekt lokalnie, postępuj zgodnie z poniższymi krokami:
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone https://github.com/matek10000/FrontEnd2024.git
+   cd FrontEnd2024
+   npm install
+   npm install react-hook-form
+   npm start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Aplikacja będzie dostępna w przeglądarce pod adresem http://localhost:3000.
+## Użyte technologie
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React.js
+- React Router
+- react-hook-form (do obsługi formularzy)
+- API: JSONPlaceholder
