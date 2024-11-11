@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useFetch from '../hooks/useFetch';
 import TableHeader from '../components/TableHeader';
+import { Link } from 'react-router-dom';
 
 const Lab5Page = () => {
   const [posts] = useFetch("https://jsonplaceholder.typicode.com/posts");
@@ -9,6 +10,7 @@ const Lab5Page = () => {
   const [sortOrderUser, setSortOrderUser] = useState('default');
   const [sortOrderTitle, setSortOrderTitle] = useState('default');
   const [sortOrderComments, setSortOrderComments] = useState('default');
+  const [expandedPostId, setExpandedPostId] = useState(null);
 
   if (!posts || !users || !comments) {
     return <div>Ładowanie danych...</div>;
@@ -59,6 +61,10 @@ const Lab5Page = () => {
     setSortOrderComments(order);
   };
 
+  const toggleExpandPost = (postId) => {
+    setExpandedPostId(expandedPostId === postId ? null : postId);
+  };
+
   return (
     <div>
       <h1>Laboratorium 5</h1>
@@ -71,9 +77,31 @@ const Lab5Page = () => {
         <tbody>
           {sortedData().map((data, index) => (
             <tr key={index}>
-              <td>{data.user.name || 'Unknown'}</td>
-              <td>{data.post.title}</td>
-              <td>{data.comments.length}</td>
+              {/* Link do strony użytkownika */}
+              <td>
+                <Link to={`/lab5/users/${data.user.id}`}>
+                  {data.user.name || 'Unknown'}
+                </Link>
+              </td>
+              
+              {/* Tytuł postu z funkcją rozwijania */}
+              <td>
+                <div onClick={() => toggleExpandPost(data.post.id)} style={{ cursor: 'pointer' }}>
+                  {data.post.title}
+                </div>
+                {expandedPostId === data.post.id && (
+                  <div style={{ paddingTop: '8px', color: '#555' }}>
+                    {data.post.body}
+                  </div>
+                )}
+              </td>
+              
+              {/* Liczba komentarzy jako link do strony komentarzy */}
+              <td>
+                <Link to={`/lab5/posts/${data.post.id}/comments`}>
+                  {data.comments.length}
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>
