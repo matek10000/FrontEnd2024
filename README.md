@@ -39,3 +39,6 @@ Aby uruchomić projekt lokalnie, postępuj zgodnie z poniższymi krokami:
 - React Router
 - react-hook-form (do obsługi formularzy)
 - API: JSONPlaceholder
+
+
+Mateusz Dybaś (mateusz.dybas@microsoft.wsei.edu.pl)
