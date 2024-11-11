@@ -4,7 +4,7 @@ import { data } from '../module-data.js';
 
 function Lab2() {
     const { id } = useParams();
-    const person = data.find(p => p.id.toString() === id); // Wyszukaj osobę według id
+    const person = data.find(p => p.id.toString() === id); // Wyszukanie osoby po id
 
     if (!id) {
         return <h1>Brak identyfikatora osoby.</h1>;

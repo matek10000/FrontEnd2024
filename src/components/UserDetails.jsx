@@ -4,7 +4,7 @@ import useFetch from '../hooks/useFetch';
 
 const UserDetails = () => {
   const { id } = useParams();
-  const [user] = useFetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+  const [user] = useFetch(`https://jsonplaceholder.typicode.com/users/${id}`); //Pobranie danych z API
 
   if (!user) {
     return <div>Ładowanie danych użytkownika...</div>;

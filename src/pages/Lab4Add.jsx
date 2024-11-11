@@ -27,7 +27,7 @@ const Lab4Add = () => {
     const onSubmitFunction = async (e) => {
         e.preventDefault();
         setErrors([]);
-
+// Walidacja
         const newErrors = [];
         if (!formData.name) newErrors.push("Nazwa jest wymagana.");
         if (!formData.birth) newErrors.push("Data urodzenia jest wymagana.");
@@ -45,7 +45,7 @@ const Lab4Add = () => {
 
         dispatch({ type: "ADD", payload: { ...formData, id: Date.now() } });
 
-        // Reset formularza
+        // Reset formularza (outdated bo dodałem przekierowanie)
         setFormData({
             name: "",
             birth: "",

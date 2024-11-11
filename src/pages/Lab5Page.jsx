@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useFetch from '../hooks/useFetch';
 import TableHeader from '../components/TableHeader';
 import { Link } from 'react-router-dom';
-
+// Pobranie danych z API
 const Lab5Page = () => {
   const [posts] = useFetch("https://jsonplaceholder.typicode.com/posts");
   const [users] = useFetch("https://jsonplaceholder.typicode.com/users");
@@ -77,14 +77,14 @@ const Lab5Page = () => {
         <tbody>
           {sortedData().map((data, index) => (
             <tr key={index}>
-              {/* Link do strony użytkownika */}
+              {/* Link do podstrony użytkownika z info*/}
               <td>
                 <Link to={`/lab5/users/${data.user.id}`}>
                   {data.user.name || 'Unknown'}
                 </Link>
               </td>
               
-              {/* Tytuł postu z funkcją rozwijania */}
+              {/* Tytuł postu z funkcją rozwijania po kliknięciu */}
               <td>
                 <div onClick={() => toggleExpandPost(data.post.id)} style={{ cursor: 'pointer' }}>
                   {data.post.title}
@@ -96,7 +96,7 @@ const Lab5Page = () => {
                 )}
               </td>
               
-              {/* Liczba komentarzy jako link do strony komentarzy */}
+              {/* Liczba komentarzy jako hiperłącze do strony komentarzy */}
               <td>
                 <Link to={`/lab5/posts/${data.post.id}/comments`}>
                   {data.comments.length}

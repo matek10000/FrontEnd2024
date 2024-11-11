@@ -4,7 +4,7 @@ import useFetch from '../hooks/useFetch';
 
 const PostComments = () => {
   const { id } = useParams();
-  const [post] = useFetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const [post] = useFetch(`https://jsonplaceholder.typicode.com/posts/${id}`); // Pobranie danych z API
   const [comments] = useFetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
 
   if (!post || !comments) {

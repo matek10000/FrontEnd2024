@@ -3,7 +3,7 @@ const AppReducer = (state, action) => {
         case "delete":
             return state.filter(person => person.id !== action.payload.id);
 
-        case "edit":
+        case "edit": // EDYCJA OSOBY
             return state.map(person => 
                 person.id === action.payload.id 
                     ? { ...person, ...action.payload }
@@ -13,7 +13,7 @@ const AppReducer = (state, action) => {
             case "rate":
                 return state.map(person =>
                     person.id === action.payload.id
-                        ? { ...person, rating: action.payload.rating } // rating już powinien być liczbą
+                        ? { ...person, rating: action.payload.rating } // rating po fixie już powinien być liczbą
                         : person
                 );
 

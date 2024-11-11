@@ -9,7 +9,7 @@ const Lab4Edit = () => {
     const navigate = useNavigate();
     const { register, handleSubmit, setValue, formState: { errors } } = useForm();
 
-    // Automatyczne uzupełnienie pola formularza danymi osoby
+    // Automatyczne uzupełnienianie pola formularza danymi osoby po id
     useEffect(() => {
         const personId = location.state?.id;
         if (personId) {

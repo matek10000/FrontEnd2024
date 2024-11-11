@@ -9,10 +9,11 @@ import Lab4Add from './pages/Lab4Add';
 import Lab4Edit from './pages/Lab4Edit';
 import NotFound from './pages/NotFound';
 import Lab5Page from './pages/Lab5Page';
-import UserDetails from './components/UserDetails'; // Nowy komponent
-import PostComments from './components/PostComments'; // Nowy komponent
+import UserDetails from './components/UserDetails';
+import PostComments from './components/PostComments';
 import AppProvider from './data/AppContext';
 
+// Obsługa paska menu głównego
 const menuItems = [
     { id: 1, label: "Home", url: "/", urlPattern: "/", element: <Home /> },
     { id: 2, label: "Laboratorium 1", url: "/lab1", urlPattern: "/lab1", element: <Lab1 /> },
@@ -23,6 +24,7 @@ const menuItems = [
     { id: 7, label: "Laboratorium 5", url: "/lab5", urlPattern: "/lab5", element: <Lab5Page /> },
 ];
 
+// m.in. Obsługa przenoszenia w lab5 do elementów w API
 function App() {
     return (
         <AppProvider>
