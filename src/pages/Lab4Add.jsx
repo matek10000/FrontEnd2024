@@ -71,7 +71,7 @@ const Lab4Add = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="Enter name"
+                        placeholder="Wprowadź nazwę"
                     />
                 </Form.Group>
                 <Form.Group className="mb-3">
@@ -94,7 +94,7 @@ const Lab4Add = () => {
                         name="eyes"
                         value={formData.eyes}
                         onChange={handleChange}
-                        placeholder="Enter eye color"
+                        placeholder="Wprowadź kolor oczu"
                     />
                 </Form.Group>
                 <Form.Group className="mb-3">
