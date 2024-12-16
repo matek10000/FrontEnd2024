@@ -1,6 +1,8 @@
 # Projekt FrontEnd 2024
+# https://matek10000-frontend2024.netlify.app/
 
 Jest to projekt stworzony na potrzeby laboratoriów z przedmiotu Front-End w 2024 roku. Projekt zawiera różne komponenty React i implementacje funkcji, takich jak formularze, zarządzanie stanem aplikacji, dynamiczne wyświetlanie danych oraz interakcje z zewnętrznymi API.
+
 
 ## Zawartość projektu
 
